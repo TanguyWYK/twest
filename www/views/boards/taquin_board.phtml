@@ -1,0 +1,31 @@
+<div class="game_div" id="taquin_div">
+    <section class="info_section">
+        <div class="timer">
+            <p id="time">00:00</p>
+        </div><!--
+        --><div class="info_game">
+            <p>Coups : <span id="moves">0</span></p>
+        </div><!--
+        --><div class="message_game">
+            <div class="message"></div>
+        </div>
+    </section>
+    <section class="canvas_section">
+        <div id="canvas_div">
+            <canvas id="canvas_background" width="<?= BOARD_W ?>" height="<?= BOARD_H ?>"></canvas>
+            <canvas id="canvas_layer0" width="<?= BOARD_W ?>" height="<?= BOARD_H ?>"></canvas>
+            <canvas id="canvas_layer1" width="<?= BOARD_W ?>" height="<?= BOARD_H ?>"></canvas>
+            <canvas id="canvas_tooltip" width="<?= BOARD_W ?>" height="<?= BOARD_H ?>"></canvas>
+        </div>
+        <div style="display: none">
+            <img id="img_example" src="#" alt="img_example" width="600" height="600">
+        </div>
+    </section>
+    <section class="controls_section">
+        <div class="buttons_div">
+            <button type="button" class="newGame_button">Nouvelle partie</button>
+            <button type="button" class="changeImg_button">Changer image</button>
+            <button type="button" class="start_button">Commencer</button>
+        </div>
+    </section>
+</div>

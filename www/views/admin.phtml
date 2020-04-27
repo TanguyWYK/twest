@@ -1,0 +1,25 @@
+<section id="admin_section">
+    <h3>Administrateur : <?=$session->getName()?></h3>
+    <ul id="admin_ul">
+        <li id="admin_messages" onclick="showMessages('new')">Messages</li>
+        <li id="admin_scores" onclick="showScores({
+            quantity: 25,
+            game: 'all',
+            difficulty: 'all',
+        })">Historiques des parties</li>
+        <li id="admin_players" onclick="showPlayers({
+            name: '',
+            email: '',
+        })">Informations joueurs</li>
+    </ul>
+    <div class="admin_controls">
+        <div class="admin_filters"></div>
+        <div class="admin_buttons"></div>
+    </div>
+    <table></table>
+    <div class="admin_controls">
+        <div class="admin_filters"></div>
+        <div class="admin_buttons"></div>
+    </div>
+    <div class="errorMessage" id="errorAdmin"></div>
+</section>

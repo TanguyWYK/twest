@@ -1,0 +1,67 @@
+<form method="post" id="login_form" class="mainFrame">
+    <fieldset>
+        <legend>Login</legend>
+        <ul>
+            <li>
+                <label for="login_email" >Email</label>
+                <input id="login_email" name="email" type="text"  maxlength="100" required value="">
+            </li>
+            <li>
+                <label for="login_password" >Mot de passe</label>
+                <input id="login_password" name="password" type="password"  maxlength="60" required value="">
+            </li>
+            <li>
+                <button class="submitButton" id="login_button" type="submit">Connexion</button>
+                <div id="newAccount_div" class="link">Créer un compte</div>
+                <div id="changePassword_div" class="link">Changer mot de passe</div>
+            </li>
+        </ul>
+        <div class="errorMessage" id="errorLogin"></div>
+    </fieldset>
+</form>
+<form method="post" id="newPassword_form" class="hidden mainFrame">
+    <fieldset>
+        <legend>Changement mot de passe</legend>
+        <ul>
+            <li>
+                <label for="new_password" >Nouveau mot de passe</label>
+                <input id="new_password" name="password" type="password"  maxlength="60" required value="">
+            </li>
+            <li>
+                <label for="confirm_newPassword" >Confirmez le nouveau mot de passe</label>
+                <input id="confirm_newPassword" name="password" type="password"  maxlength="60" required value="">
+            </li>
+            <li>
+                <button class="submitButton" id="newPassword_button" type="submit">Valider</button>
+            </li>
+        </ul>
+        <div class="errorMessage" id="errorNewPassword"></div>
+    </fieldset>
+</form>
+<form method="post" id="newAccount_form" class="hidden mainFrame">
+    <fieldset>
+        <legend>Nouveau compte</legend>
+        <ul>
+            <li>
+                <label for="newAccount_name" >Nom</label>
+                <input id="newAccount_name" name="name" type="text"  maxlength="100" required value="">
+            </li>
+            <li>
+                <label for="newAccount_email" >Email</label>
+                <input id="newAccount_email" name="email" type="text"  maxlength="100" required value="">
+            </li>
+            <li>
+                <label for="newAccount_password" >Choisissez mot de passe (8 caractères min)</label>
+                <input id="newAccount_password" name="password" type="password"  maxlength="60" required value="">
+            </li>
+            <li>
+                <label for="newAccount_confirmPassword" >Confirmer mot de passe</label>
+                <input id="newAccount_confirmPassword" name="password" type="password"  maxlength="60" required value="">
+            </li>
+            <li>
+                <button class="submitButton" id="newAccount_button" type="submit">Créer compte</button>
+            </li>
+        </ul>
+        <div class="errorMessage" id="errorNewAccount"></div>
+    </fieldset>
+</form>

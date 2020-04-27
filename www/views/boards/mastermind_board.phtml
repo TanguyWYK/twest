@@ -1,0 +1,42 @@
+<div class="game_div" id="masterMind_div">
+    <section class="info_section">
+        <div class="timer">
+            <p id="time">00:00</p>
+        </div>
+        <div class="info_game">
+            <p>Manche : <span id="round"></span>/3</p>
+            <p>Score  : <span id="score"></span></p>
+        </div>
+        <div class="message_game">
+            <div class="message"></div>
+        </div>
+    </section>
+    <section class="canvas_section">
+        <div id="canvas_div">
+            <canvas id="canvas_background" width="<?= BOARD_W?>" height="<?= BOARD_H?>"></canvas>
+            <canvas id="canvas_layer0" width="<?= BOARD_W?>" height="<?= BOARD_H?>"></canvas>
+            <canvas id="canvas_layer1" width="<?= BOARD_W?>" height="<?= BOARD_H?>"></canvas>
+            <canvas id="canvas_layer2" width="<?= BOARD_W?>" height="<?= BOARD_H?>"></canvas>
+            <canvas id="canvas_tooltip" width="<?= BOARD_W?>" height="<?= BOARD_H?>"></canvas>
+        </div>
+    </section>
+    <section class="controls_section">
+        <div id="colorsPalette">
+            <div data-color="0" style="background-color:white"></div>
+            <div data-color="1" style="background-color:blue"></div>
+            <div data-color="2" style="background-color:red"></div>
+            <div data-color="3" style="background-color:yellow"></div>
+            <div data-color="4" style="background-color:black"></div>
+            <?php if($_POST['gameOptions']['difficulty'] !== EASY): ?>
+                <div data-color="5" style="background-color:green"></div>
+                <div data-color="6" style="background-color:orange"></div>
+                <div data-color="7" style="background-color:saddlebrown"></div>
+            <?php endif; ?>
+        </div>
+        <div class="buttons_div">
+            <button type="button" class="try_button">Test</button>
+            <button type="button" class="clear_button">Vider ligne</button>
+            <button type="button" class="newGame_button">Nouvelle partie</button>
+        </div>
+    </section>
+</div>

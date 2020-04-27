@@ -1,0 +1,43 @@
+<ul id="scoresList" class="mainFrame">
+    <?php foreach ($gameNames as $gameName): ?>
+        <li>
+            <h3><?= $gameName['name'] ?></h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Difficulté</th>
+                        <th>Nom</th>
+                        <th>Score</th>
+                        <th>date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php for($level=2; $level>=0; $level--): ?>
+                    <?php $nbScoreOfThisLevel=0;?>
+                    <?php foreach ($bestScores as $bestScore): ?>
+                        <?php if($bestScore['game'] === $gameName['name'] && $bestScore['difficulty'] === "".$level): ?>
+                            <tr class="<?= $bestScore['id_user'] === $session->getUserId() ? "highlighted":""?>">
+                                <td><?= DIFFICULTY[$bestScore['difficulty']]?></td>
+                                <td><?= $bestScore['user']?></td>
+                                <td><?= $bestScore['score']?></td>
+                                <td><?= dateFr($bestScore['date'])?></td>
+                            </tr>
+                            <?php $nbScoreOfThisLevel++; ?>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                    <?php if($nbScoreOfThisLevel<3): ?>
+                        <?php for($i=3-$nbScoreOfThisLevel; $i>0; $i--):?>
+                        <tr>
+                            <td><?= DIFFICULTY[$level]?></td>
+                            <td><?= "-" ?></td>
+                            <td><?= "-" ?></td>
+                            <td><?= "-" ?></td>
+                        </tr>
+                        <?php endfor; ?>
+                    <?php endif; ?>
+                <?php endfor; ?>
+                </tbody>
+            </table>
+        </li>
+    <?php endforeach; ?>
+</ul>

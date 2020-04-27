@@ -1,0 +1,22 @@
+# On suit les liens symboliques
+Options +FollowSymlinks
+# Blocages des url
+Options -Indexes
+
+# Code d'erreur
+ErrorDocument 404  http://localhost/sites/tanguygames/www/controllers/error.php?e=404
+ErrorDocument 500  http://localhost/sites/tanguygames/www/controllers/error.php?e=500
+
+# Activation du mode rewrite d'Apache
+RewriteEngine On
+
+# Réécriture des URL
+RewriteRule ^$  controllers/home.php [L]
+RewriteRule ^home$  controllers/home.php [L]
+RewriteRule ^login$  controllers/login.php [L]
+RewriteRule ^logout$  controllers/logout.php [L]
+RewriteRule ^contact$  controllers/contact.php [L]
+RewriteRule ^scores$  controllers/scores.php [L]
+RewriteRule ^admin$  controllers/admin.php [L]
+RewriteRule ^error$  controllers/error.php [L]
+

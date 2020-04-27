@@ -1,0 +1,26 @@
+<form class="start_form mainFrame" method="post">
+    <fieldset>
+        <legend>MASTERMIND</legend>
+        <ul>
+            <li>
+                <input class="radio" type="radio" id="difficulty_0" name="difficulty" value="0">
+                <label for="difficulty_0" class="radioLabel">Facile (combinaison de 4 pions avec 5 couleurs)</label>
+            </li>
+            <li>
+                <input class="radio" type="radio" id="difficulty_1" name="difficulty" value="1" checked>
+                <label for="difficulty_1" class="radioLabel">Normal (combinaison de 4 pions avec 8 couleurs)</label>
+            </li>
+            <li>
+                <input class="radio" type="radio" id="difficulty_2" name="difficulty" value="2">
+                <label for="difficulty_2" class="radioLabel">Difficile (combinaison de 5 pions avec 8 couleurs)</label>
+            </li>
+        </ul>
+        <h2>Règles du jeu :</h2>
+        <p>Vous devez retrouver une combinaison de couleurs en 12 coups maximum.</p>
+        <p>Un pion-indice de couleur blanche correspond à une bonne couleur mal positionnée.</p>
+        <p>Un pion-indice de couleur fuchsia correspond à une bonne couleur bien positionnée.</p>
+        <p>La partie se déroule en 3 manches.</p>
+        <p>Le score final correspond au nombre total des coups des 3 manches plus un bonus de temps de 10 points maximum.</p>
+        <button type="button" class="submitButton" onclick="startGame('mastermind',3)">Démarrer</button>
+    </fieldset>
+</form>

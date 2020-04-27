@@ -1,0 +1,30 @@
+<form class="start_form mainFrame" method="post">
+    <fieldset>
+        <legend>TAQUIN</legend>
+        <ul>
+            <li>
+                <input class="radio" type="radio" id="difficulty_0" name="difficulty" value="0">
+                <label for="difficulty_0" class="radioLabel">Facile : puzzle de 9 pièces</label>
+            </li>
+            <li>
+                <input class="radio" type="radio" id="difficulty_1" name="difficulty" value="1" checked>
+                <label for="difficulty_1" class="radioLabel">Normal : puzzle de 16 pièces</label>
+            </li>
+            <li>
+                <input class="radio" type="radio" id="difficulty_2" name="difficulty" value="2">
+                <label for="difficulty_2" class="radioLabel">Difficile : puzzle de 25 pièces</label>
+            </li>
+        </ul>
+        <h2>Règles du jeu :</h2>
+        <p>Vous devez reconstituer l'image en faisant coulisser les pièces.</p>
+        <p>Pour déplacer une ou plusieurs pièces, cliquez dessus.</p>
+        <p>Le déplacement s'effectuera vers la case vide.</p>
+        <p>La partie se déroule en 1 manche.</p>
+        <p>Le score final est noté sur 2000 points :</p>
+        <ul>
+            <li class="dots_li" >1000 points selon le nombres de déplacements</li>
+            <li class="dots_li" >1000 points selon le temps</li>
+        </ul>
+        <button type="button" class="submitButton" onclick="startGame('taquin',4)">Démarrer</button>
+    </fieldset>
+</form>

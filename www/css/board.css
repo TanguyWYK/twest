@@ -1,0 +1,417 @@
+/*-------------- GENERAL ----------------------*/
+
+.game_div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
+}
+
+section {
+    width: 30%;
+    padding: 5px;
+    text-align: center;
+}
+
+.buttons_div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.canvas_section {
+    display: flex;
+    justify-content: center;
+}
+
+.canvas_section div {
+    position: relative;
+    height: 400px;
+    width: 360px;
+    box-shadow: 0 0 10px black;
+}
+
+.canvas_section canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.info_game {
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border: 4px ridge lightgrey;
+    font-family: Roboto, "Open Sans", "Arial", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 29px;
+    letter-spacing: 0;
+    color: rgb(99, 99, 99);
+}
+
+.message_game {
+    background-color: black;
+    color: white;
+    font-family: cursive;
+    margin: 10px;
+    padding: 10px;
+    border: 4px ridge lightgrey;
+    min-height: 150px;
+}
+
+.timer {
+    background-color: black;
+    color: red;
+    margin: 10px;
+    padding: 0;
+    height: 40px;
+    border: 4px ridge lightgrey;
+}
+
+#time {
+    font-family: Digital, monospace;
+    font-size: 3.8rem;
+    line-height: 34px;
+    margin: 0;
+    padding: 0 5px;
+}
+
+#pleaseWait {
+    position: relative;
+    box-shadow: none;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+#pleaseWait p {
+    line-height: 50px;
+}
+
+#pleaseWait span {
+    font-family: Roboto, "Open Sans", "Arial", sans-serif;
+    font-weight: 500;
+    font-size: 3rem;
+    font-style: normal;
+    text-transform: none;
+}
+
+.animate_rotate {
+    animation: waitingRotate 2s linear infinite;
+}
+
+@media screen and (max-width: 1068px) {
+
+    .game_div {
+        padding: 0;
+    }
+
+    .info_game {
+
+        margin: 3px;
+        padding: 3px;
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .message_game {
+        margin: 3px;
+        padding: 3px;
+        min-height: 100px;
+    }
+
+    #time {
+        font-size: 2rem;
+    }
+}
+
+/*-------------- MASTER MIND --------------------*/
+
+#masterMind_div .info_section {
+    width: 15%;
+}
+
+#masterMind_div .canvas_section {
+    width: 70%;
+    max-width: 900px;
+}
+
+#masterMind_div .controls_section {
+    width: 15%;
+}
+
+#colorsPalette {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
+    padding: 10px;
+    margin: 20px 0;
+    border: 4px ridge lightgrey;
+}
+
+#colorsPalette div {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#colorsPalette .selected {
+    border-radius: 0;
+}
+
+#colorsPalette div:hover {
+    box-shadow: 0 0 5px black;
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 1068px) {
+
+    #masterMind_div .info_section {
+        width: 30%;
+        order: 2;
+    }
+
+    #masterMind_div .canvas_section {
+        width: 100%;
+        order: 1;
+        padding: 0;
+        border: none;
+    }
+
+    #masterMind_div .controls_section {
+        width: 70%;
+        order: 3;
+    }
+
+    #colorsPalette div {
+        width: 25px;
+        height: 25px;
+        margin: 4px 8px;
+    }
+
+    #colorsPalette {
+        margin: 0;
+    }
+}
+
+/*-------------- PUISSANCE 4 --------------------*/
+
+#puissance4_div .info_section {
+    width: 15%;
+}
+
+#puissance4_div .canvas_section {
+    width: 70%;
+}
+
+#puissance4_div .controls_section {
+    width: 15%;
+}
+
+@keyframes waitingRotate {
+    0% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: rotate(180deg);
+        opacity: 0.1;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1068px) {
+
+    #puissance4_div .info_section {
+        width: 70%;
+        order: 2;
+    }
+
+    #puissance4_div .canvas_section {
+        width: 100%;
+        order: 1;
+        padding: 0;
+        border: none;
+    }
+
+    #puissance4_div .controls_section {
+        width: 30%;
+        order: 3;
+    }
+
+    #puissance4_div .timer,#puissance4_div .info_game{
+        width: 100px;
+        margin: 5px;
+    }
+
+    #puissance4_div .timer{
+        order: 2;
+    }
+
+    #puissance4_div .info_section{
+        display: flex;
+        flex-wrap: wrap;
+        order: 2;
+    }
+
+    #puissance4_div .message_game{
+        width: 120px;
+    }
+}
+
+/*-------------- TAQUIN --------------------*/
+
+#taquin_div .info_section {
+    width: 15%;
+}
+
+#taquin_div .canvas_section {
+    width: 70%;
+}
+
+#taquin_div .controls_section {
+    width: 15%;
+}
+
+@media screen and (max-width: 1068px) {
+
+    #taquin_div .info_section {
+        width: 70%;
+        order: 2;
+    }
+
+    #taquin_div .canvas_section {
+        width: 100%;
+        order: 1;
+        padding: 0;
+        border: none;
+    }
+
+    #taquin_div .info_section div {
+        display: inline-block;
+    }
+
+    #taquin_div .message_game, #taquin_div .info_game {
+        min-width: 20vw;
+        vertical-align: top;
+        margin: 0;
+    }
+
+    #taquin_div .message_game {
+        min-height: 50px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #taquin_div .controls_section {
+        width: 30%;
+        order: 3;
+    }
+
+    #taquin_div .timer,#taquin_div .info_game {
+        margin: 10px 0 0 0;
+        min-height: 60px;
+        width: 50%;
+    }
+    #taquin_div .timer p{
+        line-height: 50px;
+    }
+}
+
+/*-------------- SNAKE --------------------*/
+
+#snake_div .buttons_div {
+    display: block;
+}
+
+#snake_div .info_section {
+    width: 15%;
+}
+
+#snake_div .canvas_section {
+    width: 70%;
+}
+
+#snake_div .controls_section {
+    width: 15%;
+}
+
+#snake_div .turn_button {
+    background-color: #DDDDDD;
+    border: 1px solid #555555;
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 20px;
+    font-size: 3rem;
+    line-height: 50px;
+}
+
+#snake_div .turn_button:hover {
+    opacity: 0.8;
+    background-color: #FFFFFF;
+}
+
+#snake_div #turnLeft_button, #snake_div #turnRight_button {
+    display: none;
+}
+
+@media screen and (max-width: 1068px) {
+
+    #snake_div .info_section {
+        width: 30%;
+        order: 2;
+    }
+
+    #snake_div .canvas_section {
+        width: 100%;
+        order: 1;
+        padding: 0;
+        border: none;
+    }
+
+    #snake_div .info_section div {
+        display: inline-block;
+    }
+
+    #snake_div .buttons_div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #snake_div .controls_section {
+        width: 70%;
+        order: 3;
+    }
+
+    #snake_div .newGame_button {
+        width: 80%;
+    }
+
+    #snake_div #turnLeft_button, #snake_div #turnRight_button {
+        display: inline-block;
+        margin: 10px;
+        touch-action: none;
+    }
+
+    #snake_div .info_game{
+        font-size: 1rem;
+        padding: 10px;
+    }
+}

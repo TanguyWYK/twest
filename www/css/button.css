@@ -1,0 +1,83 @@
+/*-------------- GENERAL ----------------------*/
+
+.radioLabel {
+    cursor: pointer;
+    display: inline-block;
+}
+
+#login_button, #newAccount_div,#changePassword_div {
+    display: inline-block;
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 3px;
+    display: block;
+    background-image: linear-gradient(to right, #DA22FF 0%, #9733EE 51%, #DA22FF 100%);
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    font-family: Montserrat, "Open Sans", "Arial", sans-serif;
+    font-weight: 400;
+}
+
+button:hover {
+    background-position: right center;
+}
+
+
+.adminButton {
+    cursor: pointer;
+}
+
+.adminButton:hover {
+    opacity: 0.7;
+}
+
+.messageSave {
+    color: green;
+}
+
+.messageDelete {
+    color: red;
+}
+
+.admin_buttons {
+    display: flex;
+}
+
+.admin_filters {
+    display: inline-block;
+}
+
+.admin_filters select{
+    margin: 10px 0;
+}
+
+.disabled {
+    background: orangered;
+    cursor: not-allowed;
+}
+
+.controls_section button {
+    margin: 20px 0 50px 20px;
+}
+
+@media screen and (max-width: 640px) {
+    button {
+        font-size: 1.2rem;
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 1068px) {
+
+    .controls_section button {
+        margin: 4px;
+    }
+}

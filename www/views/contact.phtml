@@ -1,0 +1,21 @@
+<form method="post" id="contact_form" class="mainFrame">
+    <fieldset>
+        <legend>Contact</legend>
+        <ul>
+            <li>
+                <label for="contact_email">Votre email</label>
+                <input name="email" id="contact_email" type="text"  maxlength="100" required value="<?= $email?>">
+            </li>
+            <li>
+                <label for="contact_subject">Sujet</label>
+                <input name="object" id="contact_subject" type="text" maxlength="100" value="" required>
+            </li>
+            <li>
+                <label for="contact_message">Message</label>
+                <textarea name="message" id="contact_message" cols="50" rows="10" maxlength="1000" required></textarea>
+            </li>
+        </ul>
+        <button class="submitButton" id="contact_button" type="submit">Envoyer</button>
+        <div class="errorMessage" id="errorContact"></div>
+    </fieldset>
+</form>

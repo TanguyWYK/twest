@@ -1,0 +1,25 @@
+<div class="game_div" id="snake_div">
+    <section class="info_section">
+        <div class="timer">
+            <p id="time">00:00</p>
+        </div>
+        <div class="info_game">
+            <p>Score : <span id="balls">0</span></p>
+        </div>
+    </section>
+    <section class="canvas_section">
+        <div id="canvas_div">
+            <canvas id="canvas_background" width="<?= BOARD_W ?>" height="<?= BOARD_H ?>"></canvas>
+            <canvas id="canvas_layer0" width="<?= BOARD_W ?>" height="<?= BOARD_H ?>"></canvas>
+            <canvas id="canvas_layer1" width="<?= BOARD_W ?>" height="<?= BOARD_H ?>"></canvas>
+            <canvas id="canvas_tooltip" width="<?= BOARD_W ?>" height="<?= BOARD_H ?>"></canvas>
+        </div>
+    </section>
+    <section class="controls_section">
+        <div class="buttons_div">
+            <button type="button" class="newGame_button">Nouvelle partie</button>
+            <div id="turnLeft_button" class="turn_button">↰</div>
+            <div id="turnRight_button" class="turn_button">↱</div>
+        </div>
+    </section>
+</div>

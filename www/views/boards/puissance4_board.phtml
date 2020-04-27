@@ -1,0 +1,26 @@
+<div class="game_div" id="puissance4_div">
+    <section class="info_section">
+        <div class="timer">
+            <p id="time">00:00</p>
+        </div>
+        <div class="info_game">
+            <p>Manche : <span id="round"></span>/3</p>
+            <p>Score  : <span id="score"></span></p>
+        </div>
+        <div class="message_game">
+            <div class="message"></div>
+        </div>
+    </section>
+    <section class="canvas_section">
+        <div id="canvas_div">
+            <canvas id="canvas_background" width="<?= BOARD_W?>" height="<?= BOARD_H?>"></canvas>
+            <canvas id="canvas_layer0" width="<?= BOARD_W?>" height="<?= BOARD_H?>"></canvas>
+            <canvas id="canvas_layer1" width="<?= BOARD_W?>" height="<?= BOARD_H?>"></canvas>
+            <canvas id="canvas_layer2" width="<?= BOARD_W?>" height="<?= BOARD_H?>"></canvas>
+            <canvas id="canvas_tooltip" width="<?= BOARD_W?>" height="<?= BOARD_H?>"></canvas>
+        </div>
+    </section>
+    <section class="controls_section">
+        <button type="button" class="newGame_button">Nouvelle partie</button>
+    </section>
+</div>

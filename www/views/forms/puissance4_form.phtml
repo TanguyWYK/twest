@@ -1,0 +1,25 @@
+<form class="start_form mainFrame" method="post">
+    <fieldset>
+        <legend>PUISSANCE 4</legend>
+        <ul>
+            <li>
+                <input class="radio" type="radio" id="difficulty_0" name="difficulty" value="0">
+                <label for="difficulty_0" class="radioLabel">Facile (adversaire : votre cousin de 5 ans, attention il connait les règles!)</label>
+            </li>
+            <li>
+                <input class="radio" type="radio" id="difficulty_1" name="difficulty" value="1" checked>
+                <label for="difficulty_1" class="radioLabel">Normal (adversaire : joueur expérimenté)</label>
+            </li>
+            <li>
+                <input class="radio" type="radio" id="difficulty_2" name="difficulty" value="2">
+                <label for="difficulty_2" class="radioLabel">Difficile (adversaire : planifie ses attaques plusieurs coups à l'avance)</label>
+            </li>
+        </ul>
+        <h2>Règles du jeu :</h2>
+        <p>Vous devez aligner 4 pions de votre couleur (jaune) pour remporter la manche.</p>
+        <p>La partie se déroule en 3 manches gagnantes.</p>
+        <p>Une manche remportée vous rapporte 15 points, une manche perdue vous fait perdre 5 points.</p>
+        <p>Un bonus de temps sur les parties gagnées est calculé sur 30 points.</p>
+        <button type="button" class="submitButton" onclick="startGame('puissance4',1)">Démarrer</button>
+    </fieldset>
+</form>
