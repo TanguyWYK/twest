@@ -547,6 +547,11 @@ a {
     height: 24px;
 }
 
+.i_16x16 {
+    width: 16px;
+    height: 16px;
+}
+
 /*-----------------------------Footer-----------------------------------*/
 
 footer {
@@ -594,6 +599,11 @@ footer a:hover {
 }
 
 @media screen and (max-width: 1068px) {
+
+    #newAccount_div.link,#changePassword_div.link{
+        font-size: 1.2rem;
+        display: block;
+    }
 
     #admin_section, table {
         font-size: smaller;

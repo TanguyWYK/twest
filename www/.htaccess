@@ -3,12 +3,13 @@ Options +FollowSymlinks
 # Blocages des url
 Options -Indexes
 
-# Code d'erreur
-ErrorDocument 404  http://localhost/sites/tanguygames/www/controllers/error.php?e=404
-ErrorDocument 500  http://localhost/sites/tanguygames/www/controllers/error.php?e=500
-
 # Activation du mode rewrite d'Apache
 RewriteEngine On
+
+# Code d'erreur
+ErrorDocument 403  http://localhost/sites/tanguygames/www/error?e=403
+ErrorDocument 404  http://localhost/sites/tanguygames/www/error?e=404
+ErrorDocument 500  http://localhost/sites/tanguygames/www/error?e=500
 
 # Réécriture des URL
 RewriteRule ^$  controllers/home.php [L]

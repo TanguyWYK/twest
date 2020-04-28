@@ -4,34 +4,34 @@
         <meta charset="UTF-8">
         <meta name="Description" content="free games online">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="<?=RELATIVE_PATH['root']."images/favicon-32x32.png"?>">
-        <link rel="stylesheet" type="text/css" href="<?=RELATIVE_PATH['root']."css/normalize.min.css"?>"/>
-        <link rel="stylesheet" type="text/css" href="<?=RELATIVE_PATH['root']."css/style.css"?>"/>
-        <link rel="stylesheet" type="text/css" href="<?=RELATIVE_PATH['root']."css/button.css"?>"/>
-        <link rel="stylesheet" type="text/css" href="<?=RELATIVE_PATH['root']."css/board.css"?>"/>
+        <link rel="shortcut icon" href="images/favicon-32x32.png">
+        <link rel="stylesheet" type="text/css" href="css/normalize.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="css/button.css"/>
+        <link rel="stylesheet" type="text/css" href="css/board.css"/>
         <title>T-West Games</title>
     </head>
     <body>
         <header>
             <div id="title">
-                <a href="<?=RELATIVE_PATH['root']."home"?>" aria-label="Home">
+                <a href="home" aria-label="Home">
                     <h1 title="Retour au menu principal">GAMES</h1>
                 </a>
             </div>
             <nav id="menu" class="hideMenu">
                 <ul>
                     <?php if($session->isAuthenticated()): ?>
-                        <li class="<?= $menu === "home" ? "selected" : ""?>"><a href="<?=RELATIVE_PATH['root']."home"?>">Accueil</a></li>
+                        <li class="<?= $menu === "home" ? "selected" : ""?>"><a href="home">Accueil</a></li>
                         <?php if($session->getUserId()!== '0'): ?>
-                            <li class="<?= $menu === "scores" ? "selected" : ""?>"><a href="<?=RELATIVE_PATH['root']."scores"?>">Meilleurs scores</a></li>
+                            <li class="<?= $menu === "scores" ? "selected" : ""?>"><a href="scores">Meilleurs scores</a></li>
                         <?php endif; ?>
-                        <li class="<?= $menu === "login" ? "selected" : ""?>"><a href="<?=RELATIVE_PATH['root']."logout"?>">Se déconnecter</a></li>
+                        <li class="<?= $menu === "login" ? "selected" : ""?>"><a href="logout">Se déconnecter</a></li>
                     <?php else: ?>
-                        <li class="<?= $menu === "login" ? "selected" : ""?>"><a href="<?=RELATIVE_PATH['root']."login"?>">Se connecter</a></li>
+                        <li class="<?= $menu === "login" ? "selected" : ""?>"><a href="login">Se connecter</a></li>
                     <?php endif;?>
-                    <li class="<?= $menu === "contact" ? "selected" : ""?>"><a href="<?=RELATIVE_PATH['root']."contact"?>">Contact</a></li>
+                    <li class="<?= $menu === "contact" ? "selected" : ""?>"><a href="contact">Contact</a></li>
                     <?php if($session->isAuthenticated() && $session->isAdmin()) : ?>
-                        <li class="<?= $menu === "admin" ? "selected" : ""?>"><a href="<?=RELATIVE_PATH['root']."admin"?>">Administration</a></li>
+                        <li class="<?= $menu === "admin" ? "selected" : ""?>"><a href="admin">Administration</a></li>
                     <?php endif;?>
                 </ul>
             </nav>
@@ -52,22 +52,22 @@
             <p>2020 - Réalisé par <a href="contact">Tanguy Westelynck</a> - Projet 3WA</p>
         </footer>
 
-        <script src="<?=RELATIVE_PATH['root']."js/utilities/jquery-3.5.0.min.js"?>"></script>
-        <script src="<?=RELATIVE_PATH['root']."js/display.js"?>"></script>
-        <script src="<?=RELATIVE_PATH['root']."js/main.js"?>"></script>
+        <script src="js/utilities/jquery-3.5.0.min.js"></script>
+        <script src="js/display.js"></script>
+        <script src="js/main.js"></script>
         <?php if($session->isAdmin()):?>
-            <script src="<?=RELATIVE_PATH['root']."js/admin.js"?>"></script>
+            <script src="js/admin.js"></script>
         <?php endif;?>
         <?php if(isset($gameNames)): ?>
             <?php foreach ($gameNames as $gameName): ?>
                 <script src="js/classes_games/<?=$gameName['file_path']?>.js"></script>
             <?php endforeach; ?>
         <?php endif;?>
-        <script src="<?=RELATIVE_PATH['root']."js/classes_system/canvas.js"?>"></script>
-        <script src="<?=RELATIVE_PATH['root']."js/classes_system/interface.js"?>"></script>
-        <script src="<?=RELATIVE_PATH['root']."js/classes_system/score.js"?>"></script>
-        <script src="<?=RELATIVE_PATH['root']."js/classes_system/timer.js"?>"></script>
-        <script src="<?=RELATIVE_PATH['root']."js/serverRequest.js"?>"></script>
-        <script src="<?=RELATIVE_PATH['root']."js/checkForm.js"?>"></script>
+        <script src="js/classes_system/canvas.js"></script>
+        <script src="js/classes_system/interface.js"></script>
+        <script src="js/classes_system/score.js"></script>
+        <script src="js/classes_system/timer.js"></script>
+        <script src="js/serverRequest.js"></script>
+        <script src="js/checkForm.js"></script>
     </body>
 </html>
