@@ -7,7 +7,7 @@ class Mastermind {
         this.gameName = gameOptions.gameName;
         this.gameId = gameOptions.gameId;
         this.round = 1;
-        this.score = 36;
+        this.score = 0;
         this.initGame();
         this.Canvas = new Canvas(this, 3);
         this.loadEventListeners();
@@ -65,7 +65,7 @@ class Mastermind {
     newGame() {
         this.roundTime.reset(0);
         if (this.status === "test") {
-            this.score -= 12; // pénalité en cas d'abandon
+            this.score += 12; // pénalité en cas d'abandon
             this.round++;
             if (this.round === 4) {
                 this.endGame();
@@ -166,7 +166,7 @@ class Mastermind {
     endRound(status) {
         this.status = status;
         this.drawSecret();
-        this.score -= this.tries;
+        this.score += this.tries;
         this.round++;
         this.try_button.prop("disabled", true).addClass("disabled");
         this.clear_button.prop("disabled", true).addClass("disabled");
@@ -186,6 +186,7 @@ class Mastermind {
             test: this.test,
         });
         this.test = [null, null, null, null];
+        $("#score").text(this.score + this.tries);
         return message;
     }
 
@@ -194,12 +195,13 @@ class Mastermind {
         $("#score").text(this.score);
         this.roundTime.pause();
         this.totalTime += this.roundTime.seconds;
-        let timePoints = Math.min(Math.round(Math.max(240 - this.totalTime, 0) / 20), 10);
+        let timePoints = Math.round(Math.max((2000 - this.totalTime) / 2, 0));
+        let score = (36 - this.score) * 31;
         this.newGame_button.prop("disabled", true).addClass("disabled");
         setTimeout(() => {
-            alert("Partie terminée !\n - Score : " + this.score + "pts\n - Bonus temps (" + this.roundTime.convertSecondToMinSec(this.totalTime) + ") : " + timePoints + "pts\nTotal : " + (this.score + timePoints) + "pts");
+            alert("Partie terminée !\n - Score (nb essais : " + this.score + ") : " + score + " pts\n - Bonus temps (" + this.roundTime.convertSecondToMinSec(this.totalTime) + ") : " + timePoints + "pts\nTotal : " + (score + timePoints) + "pts");
             this.score += timePoints;
-            new Score(this.gameId, this.score, this.difficulty).saveScore();
+            new Score(this.gameId, score + timePoints, this.difficulty).saveScore();
         }, 1000);
     }
 

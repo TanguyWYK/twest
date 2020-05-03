@@ -11,7 +11,6 @@ class Snake {
         this.status = "new";
         this.roundTime = new Timer(0);
         this.roundTime.start();
-        this.speed = 300 - this.difficulty * 100;
         this.initGame();
     }
 
@@ -38,7 +37,9 @@ class Snake {
         this.roundTime.seconds = -1;
         this.initBoard();
         this.refreshView();
+        this.speed = 300 - this.difficulty * 100;
         this.score = 0;
+        this.nbOfBalls = 0;
         this.ballsElement.text(0);
         let self = this;
         this.status = "play";
@@ -55,6 +56,20 @@ class Snake {
         this.board = [...Array(30)].map(() => Array(30).fill(0));
         for (let i = 3; i < 8; i++) {
             this.board[15][i + 18] = i; // corps du snake
+        }
+        // On ajoute de la queue pour le mode Difficile
+        if (this.difficulty === HARD) {
+            for (let i = 0; i < 15; i++) {
+                this.board[15-i][25] = 8 + i; // corps du snake
+                this.board[i+1][27] = 24 + i; // corps du snake
+            }
+            this.board[1][26] = 23;
+        }
+        // On ajoute de la queue pour le mode Normal
+        if (this.difficulty === NORMAL) {
+            for (let i = 0; i < 15; i++) {
+                this.board[15-i][25] = 8 + i; // corps du snake
+            }
         }
         this.addBall("normal");
         this.drawBoard();
@@ -145,18 +160,18 @@ class Snake {
             this.endGame();
         } else if (nextPosition.i === this.ball.i && nextPosition.j === this.ball.j) {
             this.ballsElement.text(++this.score);
-            // on accélère
-            if (this.score % 5 === 0 && this.speed > 30) {
-                this.speed -= 10;
-            }
+            this.nbOfBalls++;
             this.addBall("normal");
             this.board[nextPosition.i][nextPosition.j] = 3;
+            this.testIfAccelerate();
         } else if (this.bonusBall.exists && nextPosition.i === this.bonusBall.position.i && nextPosition.j === this.bonusBall.position.j) {
             this.score += 3;
+            this.nbOfBalls++;
             this.ballsElement.text(this.score);
             this.bonusBall.exists = false;
             this.bonusBall.position = {i: null, j: null};
             this.board[nextPosition.i][nextPosition.j] = 3;
+            this.testIfAccelerate();
         } else {
             // on efface la queue
             this.board[max.i][max.j] = 0;
@@ -180,6 +195,13 @@ class Snake {
                 this.board[this.bonusBall.position.i][this.bonusBall.position.j] = 0;
                 this.bonusBall.position = {i: null, j: null};
             }
+        }
+    }
+
+    testIfAccelerate() {
+        // on accélère
+        if (this.nbOfBalls % 5 === 0 && this.speed > 30) {
+            this.speed = Math.ceil(this.speed * (0.9 + (0.03 - this.difficulty * 0.01)));
         }
     }
 

@@ -21,3 +21,23 @@ RewriteRule ^scores$  controllers/scores.php [L]
 RewriteRule ^admin$  controllers/admin.php [L]
 RewriteRule ^error$  controllers/error.php [L]
 
+# BEGIN Cache-Control Headers
+<IfModule mod_headers.c>
+ <FilesMatch "\.(ico|jpe?g|png|gif|swf|gz|ttf|woff2|webp|svg)$">
+ Header set Cache-Control "max-age=31536000, public"
+ </FilesMatch>
+ <FilesMatch "\.(css)$">
+ Header set Cache-Control "max-age=315360, public"
+ </FilesMatch>
+ <FilesMatch "\.(js)$">
+ Header set Cache-Control "max-age=315360, private"
+ </FilesMatch>
+ <FilesMatch "\.(html|phtml)$">
+ Header unset Cache-Control
+ </FilesMatch>
+ # Disable caching for scripts and other dynamic files
+ <FilesMatch "\.(php)$">
+ Header unset Cache-Control
+ </FilesMatch>
+</IfModule>
+# END Cache-Control Headers

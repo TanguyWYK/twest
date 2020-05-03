@@ -51,7 +51,7 @@ class Puissance4 {
         this.Canvas.clearLayer(this.Canvas.layerContexts[1], this.Canvas.layerElements[1]);
         this.roundTime.reset(0);
         if (this.status === "playing") {
-            this.score -= 5;
+            this.score -= 200;
             this.round++;
             this.showEndRoundMessage("C'est moche d'abandonner une partie...", {x: 0, y: 0}, this);
         } else {
@@ -215,7 +215,7 @@ class Puissance4 {
 
     gameWon() {
         this.status = "won";
-        this.score += 15;
+        this.score += 350;
         this.round++;
         this.roundTime.pause();
         this.totalTime += this.roundTime.seconds;
@@ -224,7 +224,7 @@ class Puissance4 {
 
     gameLost() {
         this.status = "lost";
-        this.score -= 5;
+        this.score -= 200;
         this.round++;
         this.roundTime.pause();
         this.totalTime += this.roundTime.seconds;
@@ -244,7 +244,7 @@ class Puissance4 {
         this.roundTime.pause();
         this.totalTime += this.roundTime.seconds;
         $("#score").text(this.score);
-        let timePoints = Math.min(Math.round(Math.max(80 - this.totalTime, 0) / 2), 30);
+        let timePoints = Math.round(Math.max(1000 - this.totalTime, 0));
         setTimeout(() => {
             alert("Partie terminée !\n - Victoires : " + this.score + "pts\n - Temps (" + this.roundTime.convertSecondToMinSec(this.totalTime) + ") : " + timePoints + "pts\nTotal : " + (this.score + timePoints) + "pts");
             this.score += timePoints;

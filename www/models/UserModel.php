@@ -40,7 +40,7 @@ class UserModel
         $players = $query->fetchAll();
         $map = [];
         foreach ($players as $player) {
-            similar_text($name, $player['name'], $percent1);
+            similar_text(strtolower($name),  strtolower($player['name']), $percent1);
             // on teste la similarité du mail sans le nom de domaine.
             similar_text(explode('@', $email)[0], explode('@', $player['email'])[0], $percent2);
             if ($percent1 > 40 || $percent2 > 40) {
