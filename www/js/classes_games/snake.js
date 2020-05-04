@@ -15,8 +15,6 @@ class Snake {
     }
 
     loadEventListeners() {
-        this.newGame_button = $(".newGame_button");
-        this.newGame_button.on("click", this.initGame.bind(this));
         this.turnLeft_button = document.getElementById("turnLeft_button");
         this.turnLeft_button.addEventListener("touchstart", this.turnLeft.bind(this));
         this.turnRight_button = document.getElementById("turnRight_button");
@@ -74,6 +72,8 @@ class Snake {
         this.addBall("normal");
         this.drawBoard();
         this.direction = TOP;
+        this.directionFree = true;
+        this.buttonsEvent = [];
         this.head = {i: 15, j: 21};
         this.bonusBall = {
             position: {i: null, j: null},
@@ -86,11 +86,27 @@ class Snake {
     }
 
     turnLeft() {
-        this.direction = this.direction === LEFT ? TOP : this.direction - 1;
+        this.buttonsEvent.push("left");
+        this.turnLeftIfAllowed();
+    }
+
+    turnLeftIfAllowed(){
+        if(this.directionFree) { //pour éviter le demi tour en cas de double clic
+            this.direction = this.direction === LEFT ? TOP : this.direction - 1;
+            this.directionFree = false;
+        }
     }
 
     turnRight() {
-        this.direction = (this.direction + 1) % 4;
+        this.buttonsEvent.push("right");
+        this.turnRightIfAllowed();
+    }
+
+    turnRightIfAllowed(){
+        if(this.directionFree) { //pour éviter le demi tour en cas de double clic
+            this.direction = (this.direction + 1) % 4;
+            this.directionFree = false;
+        }
     }
 
     addBall(type) {
@@ -194,6 +210,15 @@ class Snake {
                 this.bonusBall.opacity = "FF";
                 this.board[this.bonusBall.position.i][this.bonusBall.position.j] = 0;
                 this.bonusBall.position = {i: null, j: null};
+            }
+        }
+        this.directionFree = true; // on autorise de nouveau de tourner (pour éviter le demi tour en cas de double clic)
+        this.buttonsEvent.shift();
+        if(this.buttonsEvent.length){
+            if(this.buttonsEvent[0] === "left"){
+                this.turnLeftIfAllowed();
+            }else{
+                this.turnRightIfAllowed();
             }
         }
     }

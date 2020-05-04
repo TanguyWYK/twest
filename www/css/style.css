@@ -191,7 +191,7 @@ header {
     box-shadow: inset 0 0 20px black;
 }
 
- #scoresList {
+#scoresList {
     margin: auto;
     max-width: 800px;
 }
@@ -426,7 +426,6 @@ thead tr {
 
 tr.highlighted {
     background-color: #fff5cd;
-/ / font-weight: bold;
     border: 2px solid red;
 }
 
@@ -438,6 +437,10 @@ tr.deleted {
     background-color: #ed8f87;
     color: grey;
     font-style: italic;
+}
+
+#admin_section table{
+    user-select: text;
 }
 
 /*--------------------------Decoration texte----------------------------*/

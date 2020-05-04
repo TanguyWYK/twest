@@ -337,6 +337,10 @@ section {
     display: block;
 }
 
+#snake_div{
+    touch-action: none;
+}
+
 #snake_div .info_section {
     width: 15%;
 }
@@ -354,12 +358,12 @@ section {
     border: 1px solid #555555;
     display: inline-block;
     width: 100px;
-    height: 50px;
+    height: 100px;
     cursor: pointer;
     border-radius: 5px;
     margin: 20px;
     font-size: 3rem;
-    line-height: 50px;
+    line-height: 100px;
 }
 
 #snake_div .turn_button:hover {
@@ -398,10 +402,6 @@ section {
     #snake_div .controls_section {
         width: 70%;
         order: 3;
-    }
-
-    #snake_div .newGame_button {
-        width: 80%;
     }
 
     #snake_div #turnLeft_button, #snake_div #turnRight_button {
