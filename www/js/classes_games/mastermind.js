@@ -45,27 +45,33 @@ class Mastermind {
     }
 
     initGame() {
-        this.test = this.difficulty === HARD ? [null, null, null, null, null] : [null, null, null, null];
-        this.tries = 0;
-        this.status = "test";
-        this.colorSelected = null;
-        this.oldTurns = [];
-        $("#round").text(this.round);
-        $("#score").text(this.score);
-        $("#colorsPalette div").removeClass("selected");
-        if (this.difficulty === EASY) {
-            this.secret = [1, 1, 1, 1].map(x => x * Math.floor(Math.random() * 5));
-        } else if (this.difficulty === NORMAL) {
-            this.secret = [1, 1, 1, 1].map(x => x * Math.floor(Math.random() * 8));
-        } else if (this.difficulty === HARD) {
-            this.secret = [1, 1, 1, 1, 1].map(x => x * Math.floor(Math.random() * 8));
+        if(this.round === 3){
+            this.newGame_button.text("Abandonner");
         }
-    }
+        if (this.round < 4) {
+            this.test = this.difficulty === HARD ? [null, null, null, null, null] : [null, null, null, null];
+            this.tries = 0;
+            this.status = "test";
+            this.colorSelected = null;
+            this.oldTurns = [];
+            $("#round").text(this.round);
+            $("#score").text(this.score);
+            $("#colorsPalette div").removeClass("selected");
+            if (this.difficulty === EASY) {
+                this.secret = [1, 1, 1, 1].map(x => x * Math.floor(Math.random() * 5));
+            } else if (this.difficulty === NORMAL) {
+                this.secret = [1, 1, 1, 1].map(x => x * Math.floor(Math.random() * 8));
+            } else if (this.difficulty === HARD) {
+                this.secret = [1, 1, 1, 1, 1].map(x => x * Math.floor(Math.random() * 8));
+            }
+        }
+   }
 
     newGame() {
         this.roundTime.reset(0);
         if (this.status === "test") {
             this.score += 12; // pénalité en cas d'abandon
+            this.totalTime += 900; // pénalité en cas d'abandon
             this.round++;
             if (this.round === 4) {
                 this.endGame();
@@ -191,7 +197,6 @@ class Mastermind {
     }
 
     endGame() {
-        $("#round").text("3");
         $("#score").text(this.score);
         this.roundTime.pause();
         this.totalTime += this.roundTime.seconds;

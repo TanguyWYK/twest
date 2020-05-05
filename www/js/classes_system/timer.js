@@ -34,6 +34,7 @@ class Timer {
 
     reset(startSeconds) {
         this.time = new Date().getTime();
+        clearTimeout(this.chronometer);
         this.displayElement.text(this.convertSecondToMinSec(0));
         this.seconds = startSeconds;
         this.waitMilliseconds = 0;
@@ -45,7 +46,7 @@ class Timer {
         let time = new Date().getTime();
         let error = (time - self.time) % 1000;
         //console.log(error);
-        setTimeout(function () {
+        this.chronometer = setTimeout(function () {
             self.seconds++;
             if (!self.paused) {
                 self.displayElement.text(self.convertSecondToMinSec(self.seconds));

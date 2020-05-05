@@ -1,5 +1,7 @@
 <ul id="gameList" class="mainFrame">
-    <?php foreach ($gameNames as $gameName): ?>
-        <li data-id="<?=$gameName['id']?>"><?= $gameName['name'] ?></li>
-    <?php endforeach; ?>
+    <?php if(isset($gameNames)): ?>
+        <?php foreach ($gameNames as $gameName): ?>
+            <li data-id="<?=$gameName['id']?>"><?= $gameName['name'] ?></li>
+        <?php endforeach; ?>
+    <?php endif;?>
 </ul>

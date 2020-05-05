@@ -23,7 +23,9 @@ class Puissance4 {
         }
         this.status = "playing";
         this.computerTimeBusy = null;
-        $("#round").text(this.round);
+        if(this.round<4) {
+            $("#round").text(this.round);
+        }
         $("#score").text(this.score);
     }
 
@@ -48,16 +50,18 @@ class Puissance4 {
     }
 
     newGame() {
-        this.Canvas.clearLayer(this.Canvas.layerContexts[1], this.Canvas.layerElements[1]);
-        this.roundTime.reset(0);
-        if (this.status === "playing") {
-            this.score -= 200;
-            this.round++;
-            this.showEndRoundMessage("C'est moche d'abandonner une partie...", {x: 0, y: 0}, this);
-        } else {
-            this.showMessage("");
+        if(this.round<4) {
+            this.Canvas.clearLayer(this.Canvas.layerContexts[1], this.Canvas.layerElements[1]);
+            this.roundTime.reset(0);
+            if (this.status === "playing") {
+                this.score -= 500;
+                this.round++;
+                this.showEndRoundMessage("C'est moche d'abandonner une partie...", {x: 0, y: 0}, this);
+            } else {
+                this.showMessage("");
+            }
+            this.initGame();
         }
-        this.initGame();
     }
 
     addPiece(player, position, board) {
@@ -423,6 +427,9 @@ class Puissance4 {
     drawArrow(self, mousePosition) {
         self.Canvas.clearLayer(self.Canvas.layerContexts[0], self.Canvas.layerElements[0]);
         if (self.status === "playing") {
+            if(mousePosition.x===0){
+                mousePosition.x = 12;//pour éviter un affichage à 0 lorsqu'on clique sur nouvelle partie
+            }
             let position = Math.floor((mousePosition.x - 12) / 48);
             let listOfForms = self.drawOnePiece({x: 42 + position * 46, y: 50}, 1)
             listOfForms.push({
