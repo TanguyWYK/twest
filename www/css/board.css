@@ -415,3 +415,44 @@ section {
         padding: 10px;
     }
 }
+
+/*-------------- PIPE DREAM --------------------*/
+
+#pipe_div .buttons_div {
+    display: block;
+}
+
+#pipe_div{
+    touch-action: none;
+}
+
+#pipe_div .info_section {
+    width: 15%;
+}
+
+#pipe_div .canvas_section {
+    width: 50%;
+}
+
+#pipe_div .controls_section {
+    width: 15%;
+}
+
+#pipe_div #arrow{
+    position: absolute;
+    left: 90px;
+    bottom: 25px;
+}
+
+#pipe_div #nextPieces{
+    position: relative;
+}
+
+#pipe_div .nextPiece_div{
+    width: 80px;
+    height: 80px;
+    border: solid 1px #bbbbbb;
+    box-shadow: 0 1px 5px #555555,0 -1px 5px #555555,1px 0px 5px #555555,-1px 0px 5px #555555;
+    margin-top: 10px;
+    background-color: #e5e5e5;
+}

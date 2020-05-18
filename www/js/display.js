@@ -42,6 +42,10 @@ function startGame(gameName, gameId) {
             new Taquin(gameOptions, Math.floor(Math.random() * 4 + 1));
         } else if (gameName === "snake") {
             new Snake(gameOptions);
+        } else if (gameName === "pipe") {
+            new Pipe(gameOptions);
+        } else if (gameName === "taupe") {
+            new Taupe(gameOptions);
         }
     });
 }
