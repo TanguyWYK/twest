@@ -66,4 +66,8 @@ class Timer {
         }
         return minutes + ":" + seconds;
     }
+
+    getMilliseconds(){
+        return new Date().getTime()-this.time;
+    }
 }
