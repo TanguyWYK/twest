@@ -2,12 +2,6 @@
 
 /* Definition des chemins relatif et absolu */
 define("ABSOLUTE_PATH", substr(__DIR__, 0, -7));
-
-/************** EN PROD sur TWEST.FR ********************/
-//define("SITE_NAME", "games/");
-/************** EN LOCAL *******************/
-define("SITE_NAME", "");
-/*******************************************/
 define("RELATIVE_PATH", [
     "controllers" => ABSOLUTE_PATH . "controllers/",
     "models" => ABSOLUTE_PATH . "models/",
