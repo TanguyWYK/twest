@@ -2,29 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="574208f9-a391-44cf-a420-5c587d8cf401" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/www/images/Tap Taupes/background.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/www/views/forms/pipe_form.phtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/www/views/forms/taupe_form.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/www/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/css/board.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/board.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/css/button.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/database/connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/database/connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/headers/headers.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/headers/headers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/classes_games/emptyGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/classes_games/emptyGame.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/classes_games/mastermind.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/classes_games/mastermind.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/classes_games/pipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/classes_games/pipe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/classes_games/puissance4.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/classes_games/puissance4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/classes_games/snake.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/classes_games/snake.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/classes_games/taquin.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/classes_games/taquin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/classes_games/taupe.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/classes_games/taupe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/classes_system/timer.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/classes_system/timer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/display.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/display.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/serverRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/serverRequest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/models/ContactModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/models/ContactModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/models/GameModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/models/GameModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/models/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/models/UserModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/views/layout.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/www/views/layout.phtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +41,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -77,7 +57,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607326098915</updated>
-      <workItem from="1607326099989" duration="1028000" />
+      <workItem from="1607326099989" duration="1541000" />
+      <workItem from="1607344028814" duration="27000" />
+      <workItem from="1607344211316" duration="1382000" />
+      <workItem from="1607348076637" duration="296000" />
     </task>
     <servers />
   </component>
@@ -94,5 +77,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

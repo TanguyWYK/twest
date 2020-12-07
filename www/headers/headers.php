@@ -3,15 +3,13 @@
 /* Definition des chemins relatif et absolu */
 define("ABSOLUTE_PATH", substr(__DIR__, 0, -7));
 
-/************** EN PROD ********************/
+/************** EN PROD sur TWEST.FR ********************/
 //define("SITE_NAME", "games/");
-//define("PREVIOUS_DIR", "../");
 /************** EN LOCAL *******************/
 define("SITE_NAME", "");
-define("PREVIOUS_DIR", "");
 /*******************************************/
 define("RELATIVE_PATH", [
-    "controllers" => ABSOLUTE_PATH . SITE_NAME . "controllers/",
+    "controllers" => ABSOLUTE_PATH . "controllers/",
     "models" => ABSOLUTE_PATH . "models/",
     "classes" => ABSOLUTE_PATH . "classes/",
     "views" => ABSOLUTE_PATH . "views/",
@@ -19,9 +17,6 @@ define("RELATIVE_PATH", [
     "views_boards" => ABSOLUTE_PATH . "views/boards/",
     "headers" => ABSOLUTE_PATH . "headers/",
     "database" => ABSOLUTE_PATH . "database/",
-    "css" => PREVIOUS_DIR . SITE_NAME . "css/",
-    "js" => PREVIOUS_DIR . SITE_NAME . "js/",
-    "images" => PREVIOUS_DIR . SITE_NAME . "/images/",
 ]);
 
 /* Constantes*/
