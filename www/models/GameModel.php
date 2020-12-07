@@ -14,7 +14,7 @@ class GameModel
     {
         include RELATIVE_PATH['database'] . "connection.php";
         $query = $db->prepare("SELECT *
-                                FROM games
+                                FROM ".$db_prefix."games
                                 WHERE 1");
         $query->execute();
         return $query->fetchAll();
@@ -33,7 +33,7 @@ class GameModel
     public function saveScore($score, $userId)
     {
         include RELATIVE_PATH['database'] . 'connection.php';
-        $query = $db->prepare("INSERT INTO scores(id_user,id_game,score,difficulty,date)
+        $query = $db->prepare("INSERT INTO ".$db_prefix."scores(id_user,id_game,score,difficulty,date)
                                 VALUES (?,?,?,?,NOW())");
         $query->execute([
             $userId,
@@ -42,7 +42,7 @@ class GameModel
             $score['difficulty'],
         ]);
         $query = $db->prepare("SELECT MAX(id) AS 'last_id'
-                               FROM scores");
+                               FROM ".$db_prefix."scores");
         $query->execute();
         return $query->fetch()['last_id'];
     }
@@ -50,7 +50,7 @@ class GameModel
     private function addNewBestScore($scoreId)
     {
         include RELATIVE_PATH['database'] . 'connection.php';
-        $query = $db->prepare("INSERT INTO best_scores(id_score)
+        $query = $db->prepare("INSERT INTO ".$db_prefix."best_scores(id_score)
                                 VALUES (?)");
         $query->execute([
             $scoreId,
@@ -61,7 +61,7 @@ class GameModel
     private function removeOneBestScore($scoreId)
     {
         include RELATIVE_PATH['database'] . 'connection.php';
-        $query = $db->prepare("DELETE FROM best_scores
+        $query = $db->prepare("DELETE FROM ".$db_prefix."best_scores
                                 WHERE id_score = ?");
         $query->execute([
             $scoreId,
@@ -72,11 +72,11 @@ class GameModel
     public function getBestScores()
     {
         include RELATIVE_PATH['database'] . "connection.php";
-        $query = $db->prepare("SELECT scores.id, scores.id_game,games.name AS 'game',scores.difficulty,users.name AS 'user',scores.score,scores.date
-                               FROM best_scores
-                               LEFT JOIN scores on scores.id = best_scores.id_score
-                               LEFT JOIN games on games.id = scores.id_game
-                               LEFT JOIN users on users.id = scores.id_user          
+        $query = $db->prepare("SELECT ".$db_prefix."scores.id, ".$db_prefix."scores.id_game,".$db_prefix."games.name AS 'game',".$db_prefix."scores.difficulty,".$db_prefix."users.name AS 'user',".$db_prefix."scores.score,".$db_prefix."scores.date
+                               FROM ".$db_prefix."best_scores
+                               LEFT JOIN ".$db_prefix."scores on ".$db_prefix."scores.id = ".$db_prefix."best_scores.id_score
+                               LEFT JOIN ".$db_prefix."games on ".$db_prefix."games.id = ".$db_prefix."scores.id_game
+                               LEFT JOIN ".$db_prefix."users on ".$db_prefix."users.id = ".$db_prefix."scores.id_user          
                                WHERE 1
                                ORDER BY 'id_game',difficulty DESC,score DESC");
         $query->execute();
@@ -95,11 +95,11 @@ class GameModel
         if ($filters['game'] !== "all") {
             $whereString .= " AND id_game = " . $filters['game'];
         }
-        $query = $db->prepare("SELECT scores.id_game,scores.difficulty,scores.score,scores.date,users.name AS 'user'
-                               FROM scores
-                               LEFT JOIN users ON users.id = scores.id_user
+        $query = $db->prepare("SELECT ".$db_prefix."scores.id_game,".$db_prefix."scores.difficulty,".$db_prefix."scores.score,".$db_prefix."scores.date,".$db_prefix."users.name AS 'user'
+                               FROM ".$db_prefix."scores
+                               LEFT JOIN ".$db_prefix."users ON ".$db_prefix."users.id = ".$db_prefix."scores.id_user
                                " . $whereString . "
-                               ORDER BY scores.date DESC
+                               ORDER BY ".$db_prefix."scores.date DESC
                                LIMIT " . $filters['quantity']);
         $query->execute();
         return $query->fetchAll();
@@ -108,11 +108,11 @@ class GameModel
     public function getScoresByUserId($userId)
     {
         include RELATIVE_PATH['database'] . "connection.php";
-        $query = $db->prepare("SELECT scores.id_game,scores.difficulty,scores.score,scores.date,users.name AS 'user'
-                               FROM scores
-                               LEFT JOIN users ON users.id = scores.id_user
+        $query = $db->prepare("SELECT ".$db_prefix."scores.id_game,".$db_prefix."scores.difficulty,".$db_prefix."scores.score,".$db_prefix."scores.date,".$db_prefix."users.name AS 'user'
+                               FROM ".$db_prefix."scores
+                               LEFT JOIN ".$db_prefix."users ON ".$db_prefix."users.id = ".$db_prefix."scores.id_user
                                WHERE id_user = ?
-                               ORDER BY scores.date DESC
+                               ORDER BY ".$db_prefix."scores.date DESC
                                LIMIT 100");
         $query->execute([
             $userId,

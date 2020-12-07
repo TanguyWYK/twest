@@ -1,7 +1,7 @@
 "use strict";
 
 /* Fonction qui vérifie la connexion de l'utilisateur */
-function checkLogin(callback){
+function checkLogin(callback) {
     $("#login_form").on("submit", function (event) {
         event.preventDefault();
     });
@@ -27,21 +27,21 @@ function checkLogin(callback){
                 displayErrorMessage(errorElement, errorMessage)
             }
         });
-    }else {
+    } else {
         displayErrorMessage(errorElement, errorMessage)
     }
 }
 
 /* Fonction pour se connecter */
 function loginUser() {
-    checkLogin(function(){
+    checkLogin(function () {
         document.location.href = "home";
     });
 }
 
 /* Fonction pour changer le mot de passe */
 function changePassword() {
-    checkLogin(function(){
+    checkLogin(function () {
         $("#newPassword_form").slideDown(500).removeClass("hidden");
     });
 }
@@ -117,7 +117,7 @@ function saveMessageContact() {
 }
 
 /* Fonction qui sauvegarde le nouveau mot de passe */
-function saveNewPassword(){
+function saveNewPassword() {
     $("#newPassword_form").on("submit", function (event) {
         event.preventDefault();
     });
@@ -131,9 +131,9 @@ function saveNewPassword(){
             password: password,
             action: "changePassword",
         }).then(function (data) {
-            if(data === "password changed") {
+            if (data === "password changed") {
                 document.location.href = "home";
-            }else {
+            } else {
                 displayErrorMessage(errorElement, "Une erreur c'est produite");
             }
         });

@@ -13,7 +13,6 @@ const BOTTOM = 1;
 const RIGHT = 2;
 const TOP = 3;
 
-
 /* Chargement des events */
 $("#burger_button").on("click", "", {}, toggleMenuMobile);
 $("#gameList li").on("click", "", {}, loadGameForm);

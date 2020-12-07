@@ -19,7 +19,7 @@ class Taquin {
             self.initGame();
             self.imgExample.onload = null;
         }
-        this.imgExample.src = "././images/taquin/image" + this.imageId + ".jpg";
+        this.imgExample.src = "images/taquin/image" + this.imageId + ".jpg";
     }
 
     loadEventListeners() {
@@ -257,7 +257,7 @@ class Taquin {
         this.imgExample.onload = function () {
             self.refreshPieces();
         };
-        this.imgExample.src = "././images/taquin/image" + this.imageId + ".jpg";
+        this.imgExample.src = "images/taquin/image" + this.imageId + ".jpg";
     }
 
     /*---------------------- GRAPHISME ----------------------------------------------*/

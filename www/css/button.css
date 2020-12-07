@@ -5,7 +5,7 @@
     display: inline-block;
 }
 
-#login_button, #newAccount_div,#changePassword_div {
+#login_button, #newAccount_div, #changePassword_div {
     display: inline-block;
 }
 
@@ -55,7 +55,7 @@ button:hover {
     display: inline-block;
 }
 
-.admin_filters select{
+.admin_filters select {
     margin: 10px 0;
 }
 

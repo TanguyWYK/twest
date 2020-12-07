@@ -4,11 +4,11 @@
         <meta charset="UTF-8">
         <meta name="Description" content="free games online">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="images/favicon-32x32.png">
-        <link rel="stylesheet" type="text/css" href="css/normalize.min.css"/>
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
-        <link rel="stylesheet" type="text/css" href="css/button.css"/>
-        <link rel="stylesheet" type="text/css" href="css/board.css"/>
+        <link rel="shortcut icon" href="<?= RELATIVE_PATH['images'] ?>favicon-32x32.png">
+        <link rel="stylesheet" type="text/css" href="<?= RELATIVE_PATH['css'] ?>normalize.min.css"/>
+        <link rel="stylesheet" type="text/css" href="<?= RELATIVE_PATH['css'] ?>style.css"/>
+        <link rel="stylesheet" type="text/css" href="<?= RELATIVE_PATH['css'] ?>button.css"/>
+        <link rel="stylesheet" type="text/css" href="<?= RELATIVE_PATH['css'] ?>board.css"/>
         <title>T-West Games</title>
     </head>
     <body>
@@ -49,25 +49,25 @@
         </div>
 
         <footer>
-            <p>2020 - Réalisé par <a href="contact">Tanguy Westelynck</a> - Projet 3WA</p>
+            <p>2020 - Réalisé par <a href="<?= URL ?>contact">Tanguy Westelynck</a> - Projet 3WA</p>
         </footer>
 
-        <script src="js/utilities/jquery-3.5.0.min.js"></script>
-        <script src="js/display.js"></script>
-        <script src="js/main.js"></script>
+        <script src="<?= RELATIVE_PATH['js'] ?>utilities/jquery-3.5.0.min.js"></script>
+        <script src="<?= RELATIVE_PATH['js'] ?>display.js"></script>
+        <script src="<?= RELATIVE_PATH['js'] ?>main.js"></script>
         <?php if($session->isAdmin()):?>
-            <script src="js/admin.js"></script>
+            <script src="<?= RELATIVE_PATH['js'] ?>admin.js"></script>
         <?php endif;?>
         <?php if(isset($gameNames)): ?>
             <?php foreach ($gameNames as $gameName): ?>
-                <script src="js/classes_games/<?=$gameName['file_path']?>.js"></script>
+                <script src="<?= RELATIVE_PATH['js'] ?>classes_games/<?=$gameName['file_path']?>.js"></script>
             <?php endforeach; ?>
         <?php endif;?>
-        <script src="js/classes_system/canvas.js"></script>
-        <script src="js/classes_system/interface.js"></script>
-        <script src="js/classes_system/score.js"></script>
-        <script src="js/classes_system/timer.js"></script>
-        <script src="js/serverRequest.js"></script>
-        <script src="js/checkForm.js"></script>
+        <script src="<?= RELATIVE_PATH['js'] ?>classes_system/canvas.js"></script>
+        <script src="<?= RELATIVE_PATH['js'] ?>classes_system/interface.js"></script>
+        <script src="<?= RELATIVE_PATH['js'] ?>classes_system/score.js"></script>
+        <script src="<?= RELATIVE_PATH['js'] ?>classes_system/timer.js"></script>
+        <script src="<?= RELATIVE_PATH['js'] ?>serverRequest.js"></script>
+        <script src="<?= RELATIVE_PATH['js'] ?>checkForm.js"></script>
     </body>
 </html>

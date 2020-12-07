@@ -23,7 +23,7 @@ class Puissance4 {
         }
         this.status = "playing";
         this.computerTimeBusy = null;
-        if(this.round<4) {
+        if (this.round < 4) {
             $("#round").text(this.round);
         }
         $("#score").text(this.score);
@@ -50,7 +50,7 @@ class Puissance4 {
     }
 
     newGame() {
-        if(this.round<4) {
+        if (this.round < 4) {
             this.Canvas.clearLayer(this.Canvas.layerContexts[1], this.Canvas.layerElements[1]);
             this.roundTime.reset(0);
             if (this.status === "playing") {
@@ -156,7 +156,7 @@ class Puissance4 {
 
     // Essaye d'ajouter une pièce
     playTurn(self, mousePosition) {
-        if (self.status === "playing" && self.computerTimeBusy !== self.roundTime.seconds ) {
+        if (self.status === "playing" && self.computerTimeBusy !== self.roundTime.seconds) {
             self.Canvas.clearLayer(self.Canvas.layerContexts[0], self.Canvas.layerElements[0]);
             let position = Math.floor((mousePosition.x - 12) / 48);
             let message = null;
@@ -427,7 +427,7 @@ class Puissance4 {
     drawArrow(self, mousePosition) {
         self.Canvas.clearLayer(self.Canvas.layerContexts[0], self.Canvas.layerElements[0]);
         if (self.status === "playing") {
-            if(mousePosition.x===0){
+            if (mousePosition.x === 0) {
                 mousePosition.x = 12;//pour éviter un affichage à 0 lorsqu'on clique sur nouvelle partie
             }
             let position = Math.floor((mousePosition.x - 12) / 48);

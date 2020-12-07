@@ -1,0 +1,31 @@
+<form class="start_form mainFrame" method="post">
+    <fieldset>
+        <legend>PIPE DREAM</legend>
+        <ul>
+            <li>
+                <input class="radio" type="radio" id="difficulty_0" name="difficulty" value="0">
+                <label for="difficulty_0" class="radioLabel">Facile : vous avez le temps de bien faire le boulot</label>
+            </li>
+            <li>
+                <input class="radio" type="radio" id="difficulty_1" name="difficulty" value="1" checked>
+                <label for="difficulty_1" class="radioLabel">Normal : c'est normal</label>
+            </li>
+            <li>
+                <input class="radio" type="radio" id="difficulty_2" name="difficulty" value="2">
+                <label for="difficulty_2" class="radioLabel">Difficile : je suis Mariooo!</label>
+            </li>
+        </ul>
+        <h2>Règles du jeu :</h2>
+        <p>Félicitation vous êtes un plombier !</p>
+        <p>Vous devez poser les tuyaux pour former la canalisation la plus longue possible.</p>
+        <p>Les tuyaux arrivent dans un ordre aléatoire, vous pouvez remplacer un tuyau déjà posé s'il ne contient pas d'eau.</p>
+        <p>Il faut faire vite, l'eau arrive!</p>
+        <p>Un tuyau rempli vous rapporte +50pts.</p>
+        <p>Une boucle d'eau vous rapporte un bonus de +500pts.</p>
+        <p>Un remplacement de tuyau vous coûte -50pts.</p>
+        <p>Vous gagnez un bonus si vous arrivez à atteindre l'objectif du nombre de tuyau :</p>
+        <p>+ 1000pts pour le niveau 1</p>
+        <p>+ 2000pts pour le niveau 2, etc.</p>
+        <button type="button" class="submitButton" onclick="startGame('pipe',5)">Démarrer</button>
+    </fieldset>
+</form>

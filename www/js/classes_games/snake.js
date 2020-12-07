@@ -58,15 +58,15 @@ class Snake {
         // On ajoute de la queue pour le mode Difficile
         if (this.difficulty === HARD) {
             for (let i = 0; i < 15; i++) {
-                this.board[15-i][25] = 8 + i; // corps du snake
-                this.board[i+1][27] = 24 + i; // corps du snake
+                this.board[15 - i][25] = 8 + i; // corps du snake
+                this.board[i + 1][27] = 24 + i; // corps du snake
             }
             this.board[1][26] = 23;
         }
         // On ajoute de la queue pour le mode Normal
         if (this.difficulty === NORMAL) {
             for (let i = 0; i < 15; i++) {
-                this.board[15-i][25] = 8 + i; // corps du snake
+                this.board[15 - i][25] = 8 + i; // corps du snake
             }
         }
         this.addBall("normal");
@@ -90,8 +90,8 @@ class Snake {
         this.turnLeftIfAllowed();
     }
 
-    turnLeftIfAllowed(){
-        if(this.directionFree) { //pour éviter le demi tour en cas de double clic
+    turnLeftIfAllowed() {
+        if (this.directionFree) { //pour éviter le demi tour en cas de double clic
             this.direction = this.direction === LEFT ? TOP : this.direction - 1;
             this.directionFree = false;
         }
@@ -102,8 +102,8 @@ class Snake {
         this.turnRightIfAllowed();
     }
 
-    turnRightIfAllowed(){
-        if(this.directionFree) { //pour éviter le demi tour en cas de double clic
+    turnRightIfAllowed() {
+        if (this.directionFree) { //pour éviter le demi tour en cas de double clic
             this.direction = (this.direction + 1) % 4;
             this.directionFree = false;
         }
@@ -214,10 +214,10 @@ class Snake {
         }
         this.directionFree = true; // on autorise de nouveau de tourner (pour éviter le demi tour en cas de double clic)
         this.buttonsEvent.shift();
-        if(this.buttonsEvent.length){
-            if(this.buttonsEvent[0] === "left"){
+        if (this.buttonsEvent.length) {
+            if (this.buttonsEvent[0] === "left") {
                 this.turnLeftIfAllowed();
-            }else{
+            } else {
                 this.turnRightIfAllowed();
             }
         }

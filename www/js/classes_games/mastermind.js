@@ -45,7 +45,7 @@ class Mastermind {
     }
 
     initGame() {
-        if(this.round === 3){
+        if (this.round === 3) {
             this.newGame_button.text("Abandonner");
         }
         if (this.round < 4) {
@@ -65,7 +65,7 @@ class Mastermind {
                 this.secret = [1, 1, 1, 1, 1].map(x => x * Math.floor(Math.random() * 8));
             }
         }
-   }
+    }
 
     newGame() {
         this.roundTime.reset(0);

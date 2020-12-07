@@ -12,7 +12,7 @@ class UserModel
     public function getUserByEmail($email)
     {
         include RELATIVE_PATH['database'] . 'connection.php';
-        $query = $db->prepare("SELECT * FROM users
+        $query = $db->prepare("SELECT * FROM ".$db_prefix."users
 					           WHERE email=?");
         $query->execute([
             $email
@@ -23,7 +23,7 @@ class UserModel
     public function getUserById($id)
     {
         include RELATIVE_PATH['database'] . 'connection.php';
-        $query = $db->prepare("SELECT name,email,creation_date FROM users
+        $query = $db->prepare("SELECT name,email,creation_date FROM ".$db_prefix."users
 					           WHERE id=?");
         $query->execute([
             $id
@@ -34,7 +34,7 @@ class UserModel
     public function searchUser($name, $email)
     {
         include RELATIVE_PATH['database'] . 'connection.php';
-        $query = $db->prepare("SELECT id,name,email,creation_date FROM users
+        $query = $db->prepare("SELECT id,name,email,creation_date FROM ".$db_prefix."users
 					           WHERE 1");
         $query->execute();
         $players = $query->fetchAll();
@@ -63,7 +63,7 @@ class UserModel
     public function getNumberOfGameOfPlayerById($id)
     {
         include RELATIVE_PATH['database'] . 'connection.php';
-        $query = $db->prepare("SELECT count(id) AS 'quantity' FROM scores
+        $query = $db->prepare("SELECT count(id) AS 'quantity' FROM ".$db_prefix."scores
 					           WHERE id_user=?");
         $query->execute([
             $id
@@ -74,7 +74,7 @@ class UserModel
     public function userEmailIsUnique($email)
     {
         include RELATIVE_PATH['database'] . 'connection.php';
-        $query = $db->prepare("SELECT email FROM users
+        $query = $db->prepare("SELECT email FROM ".$db_prefix."users
                             WHERE email=?");
         $query->execute([
             $email,
@@ -85,7 +85,7 @@ class UserModel
     public function userNameIsUnique($name)
     {
         include RELATIVE_PATH['database'] . 'connection.php';
-        $query = $db->prepare("SELECT name FROM users
+        $query = $db->prepare("SELECT name FROM ".$db_prefix."users
                             WHERE name=?");
         $query->execute([
             $name,
@@ -96,7 +96,7 @@ class UserModel
     public function setNewUser($user)
     {
         include RELATIVE_PATH['database'] . 'connection.php';
-        $query = $db->prepare("INSERT INTO users(email,name,password,creation_date)
+        $query = $db->prepare("INSERT INTO ".$db_prefix."users(email,name,password,creation_date)
                                 VALUES (?,?,?,NOW())");
         $query->execute([
             $user['email'],
@@ -109,7 +109,7 @@ class UserModel
     public function updatePassword($userId,$newPassword)
     {
         include RELATIVE_PATH['database'] . 'connection.php';
-        $query = $db->prepare("UPDATE users SET password = ?
+        $query = $db->prepare("UPDATE ".$db_prefix."users SET password = ?
                                WHERE id = ?");
         $query->execute([
             password_hash($newPassword, PASSWORD_BCRYPT),

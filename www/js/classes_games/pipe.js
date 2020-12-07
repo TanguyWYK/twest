@@ -47,7 +47,7 @@ class Pipe {
 
     initGame() {
         $("#level").text(this.level + 1);
-        this.showMessage("Objectif: "+this.nbOfBlockMin[this.level]+" tuyaux");
+        this.showMessage("Objectif: " + this.nbOfBlockMin[this.level] + " tuyaux");
         this.blockMinElement.text(this.nbOfBlockMin[this.level]);
         this.blockElement.text(0);
         this.roundTime.seconds = -1;
@@ -255,14 +255,14 @@ class Pipe {
     }
 
     endGame(status) {
-        if(status === "win"){
+        if (status === "win") {
             setTimeout(() => {
                 alert("Félicitation vous avez fini tous les niveaux !\n - Score : " + this.score + " pts");
                 new Score(this.gameId, this.score, this.difficulty).saveScore();
             }, 1000);
-        }else{
+        } else {
             setTimeout(() => {
-                alert("Partie terminée ! Niveau atteint : "+(this.level+1)+"/10\n - Score : " + this.score + " pts");
+                alert("Partie terminée ! Niveau atteint : " + (this.level + 1) + "/10\n - Score : " + this.score + " pts");
                 new Score(this.gameId, this.score, this.difficulty).saveScore();
             }, 1000);
         }

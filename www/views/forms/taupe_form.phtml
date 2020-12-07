@@ -1,0 +1,27 @@
+<form class="start_form mainFrame" method="post">
+    <fieldset>
+        <legend>SNAKE</legend>
+        <ul>
+            <li>
+                <input class="radio" type="radio" id="difficulty_0" name="difficulty" value="0">
+                <label for="difficulty_0" class="radioLabel">Facile</label>
+            </li>
+            <li>
+                <input class="radio" type="radio" id="difficulty_1" name="difficulty" value="1" checked>
+                <label for="difficulty_1" class="radioLabel">Normal</label>
+            </li>
+            <li>
+                <input class="radio" type="radio" id="difficulty_2" name="difficulty" value="2">
+                <label for="difficulty_2" class="radioLabel">Difficile</label>
+            </li>
+        </ul>
+        <h2>Règles du jeu :</h2>
+        <p>Vous êtes le snake !</p>
+        <p>Ramassez les balles sans mordre votre queue.</p>
+        <p>Vous avez deux commandes : tourner à droite ou tourner à gauche (ou utilisez les 4 flèches du clavier).</p>
+        <p>A chaque balle bleue ramassée votre corps s'allonge.</p>
+        <p>Une balle bonus rouge peut apparaitre, attrapez la vite avant qu'elle ne disparaisse, elle vaut 3 points.</p>
+        <p>La vitesse s'accélère toutes les cinq balles ramassées.</p>
+        <button type="button" class="submitButton" onclick="startGame('pipe',5)">Démarrer</button>
+    </fieldset>
+</form>

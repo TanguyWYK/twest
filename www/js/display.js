@@ -34,7 +34,7 @@ function startGame(gameName, gameId) {
         gameOptions: gameOptions,
         action: "loadBoard",
     }, function () {
-        window.scrollTo(0,80);
+        window.scrollTo(0, 80);
         if (gameName === "mastermind") {
             new Mastermind(gameOptions);
         } else if (gameName === "puissance4") {

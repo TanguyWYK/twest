@@ -1,6 +1,6 @@
 "use strict";
 
-class Taupe{
+class Taupe {
 
     constructor(gameOptions) {
         this.difficulty = gameOptions.difficulty;

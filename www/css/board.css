@@ -191,7 +191,7 @@ section {
         order: 3;
     }
 
-    #masterMind_div .buttons_div button{
+    #masterMind_div .buttons_div button {
         margin: 10px;
     }
 
@@ -256,22 +256,22 @@ section {
         order: 3;
     }
 
-    #puissance4_div .timer,#puissance4_div .info_game{
+    #puissance4_div .timer, #puissance4_div .info_game {
         width: 100px;
         margin: 5px;
     }
 
-    #puissance4_div .timer{
+    #puissance4_div .timer {
         order: 2;
     }
 
-    #puissance4_div .info_section{
+    #puissance4_div .info_section {
         display: flex;
         flex-wrap: wrap;
         order: 2;
     }
 
-    #puissance4_div .message_game{
+    #puissance4_div .message_game {
         width: 120px;
     }
 }
@@ -325,12 +325,13 @@ section {
         order: 3;
     }
 
-    #taquin_div .timer,#taquin_div .info_game {
+    #taquin_div .timer, #taquin_div .info_game {
         margin: 10px 0 0 0;
         min-height: 60px;
         width: 50%;
     }
-    #taquin_div .timer p{
+
+    #taquin_div .timer p {
         line-height: 50px;
     }
 }
@@ -341,7 +342,7 @@ section {
     display: block;
 }
 
-#snake_div{
+#snake_div {
     touch-action: none;
 }
 
@@ -414,7 +415,7 @@ section {
         touch-action: none;
     }
 
-    #snake_div .info_game{
+    #snake_div .info_game {
         font-size: 1rem;
         padding: 10px;
     }
@@ -422,7 +423,7 @@ section {
 
 /*-------------- PIPE DREAM --------------------*/
 
-#pipe_div{
+#pipe_div {
     touch-action: none;
 }
 
@@ -438,61 +439,61 @@ section {
     width: 15%;
 }
 
-#pipe_div .buttons_div{
+#pipe_div .buttons_div {
     flex-direction: row;
     justify-content: space-between;
 }
 
-#pipe_div #nextPieces{
+#pipe_div #nextPieces {
     position: relative;
 }
 
-#pipe_div .nextPiece_div[data-id="0"]{
+#pipe_div .nextPiece_div[data-id="0"] {
     margin-left: 40px;
 }
 
-#pipe_div .nextPiece_div[data-id="1"]{
+#pipe_div .nextPiece_div[data-id="1"] {
     margin-left: 30px;
 }
 
-#pipe_div .nextPiece_div[data-id="2"]{
+#pipe_div .nextPiece_div[data-id="2"] {
     margin-left: 20px;
 }
 
-#pipe_div .nextPiece_div[data-id="3"]{
+#pipe_div .nextPiece_div[data-id="3"] {
     margin-left: 10px;
 }
 
-#pipe_div .nextPiece_div[data-id="4"]{
+#pipe_div .nextPiece_div[data-id="4"] {
     margin-left: 0;
     border: 1px red solid;
 }
 
-#pipe_div .message_game{
+#pipe_div .message_game {
     padding-top: 10px;
 }
 
-#pipe_div .info_section button{
+#pipe_div .info_section button {
     width: 100%;
     max-width: 120px;
     max-height: 50px;
     margin: 10px auto;
 }
 
-#pipe_div .nextPiece_div{
+#pipe_div .nextPiece_div {
     width: 80px;
     height: 80px;
     border: solid 1px #bbbbbb;
-    box-shadow: 0 1px 5px #555555,0 -1px 5px #555555,1px 0 5px #555555,-1px 0 5px #555555;
+    box-shadow: 0 1px 5px #555555, 0 -1px 5px #555555, 1px 0 5px #555555, -1px 0 5px #555555;
     margin: 5px auto;
     background-color: #e5e5e5;
 }
 
-#pipe_div #tank{
+#pipe_div #tank {
     display: inline-block;
 }
 
-#pipe_div .info_game p{
+#pipe_div .info_game p {
     font-size: 1.2rem;
 }
 
@@ -525,45 +526,45 @@ section {
         text-align: left;
     }
 
-    #pipe_div .info_game,#pipe_div .message_game{
+    #pipe_div .info_game, #pipe_div .message_game {
         font-size: 1rem;
         padding: 10px;
         min-height: 50px;
         height: 60px;
     }
 
-    #pipe_div .info_game p{
+    #pipe_div .info_game p {
         line-height: 10px;
         margin: 3px;
         padding: 0;
     }
 
-    #pipe_div #nextPieces{
+    #pipe_div #nextPieces {
         display: flex;
         flex-direction: row-reverse;
         height: 80px;
     }
 
-    #pipe_div #nextPieces .nextPiece_div{
+    #pipe_div #nextPieces .nextPiece_div {
         transform: scale(0.5);
         margin-right: -10px;
         margin-left: -10px;
     }
 
-    #pipe_div #nextPieces .nextPiece_div[data-id="4"]{
+    #pipe_div #nextPieces .nextPiece_div[data-id="4"] {
         margin-top: 0;
     }
 
-    #pipe_div #arrow{
+    #pipe_div #arrow {
         display: none;
     }
 
-    #pipe_div .info_game,#pipe_div .message_game {
+    #pipe_div .info_game, #pipe_div .message_game {
         width: 33%;
     }
 
-    #pipe_div #tank{
-        transform: scale(0.7,8) rotate(270deg);
+    #pipe_div #tank {
+        transform: scale(0.7, 8) rotate(270deg);
         margin-left: 25px;
         opacity: 0.5;
     }
