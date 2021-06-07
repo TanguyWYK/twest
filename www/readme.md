@@ -50,7 +50,7 @@ Les fichiers HTML/pHTML comportent :
 Place à l'action !  
 www.twest.fr  
 Vous pouvez créer un compte, il n'y a pas de validation par email.  
-Pour tester le panneau d'admin : connectez-vous avec ***tanguywest47@yahoo.fr*** code ***Yp4doz5xlm***  
+Pour tester le panneau d'admin : connectez-vous avec le compte admin fourni.
 Merci pour la correction ! 
 
 Tanguy Westelynck 
